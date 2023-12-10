@@ -1,14 +1,18 @@
-/* eslint-disable react-native/no-inline-styles */
-import {Text, SafeAreaView, Image, StyleSheet} from 'react-native';
+import {Text, SafeAreaView, Image} from 'react-native';
 import React from 'react';
+import {styles} from '../styles/NewsDetails';
 
 const NewsDetails = props => {
   const params = props?.route?.params;
   return (
     <SafeAreaView style={styles.container}>
       <Image
-        source={{uri: params?.urlToImage}}
-        style={{height: 150, width: 150, resizeMode: 'cover'}}
+        source={{
+          uri:
+            params?.urlToImage ||
+            'https://as2.ftcdn.net/v2/jpg/03/85/61/45/1000_F_385614508_K1aFSB0lhI17ZaW8lsNLQeP09xNA43gF.jpg',
+        }}
+        style={styles.image}
       />
       <Text style={styles.textStyle}>{`Author Name: ${params?.author}`}</Text>
       <Text
@@ -21,19 +25,3 @@ const NewsDetails = props => {
 };
 
 export default NewsDetails;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    padding: 25,
-  },
-  textStyle: {
-    alignSelf: 'center',
-    fontSize: 17,
-    fontWeight: '600',
-    width: '90%',
-    marginVertical: 15,
-  },
-});

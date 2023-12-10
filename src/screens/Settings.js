@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
-import {SafeAreaView, Text, Image, StyleSheet, View} from 'react-native';
+import {SafeAreaView, Text, Image, View} from 'react-native';
 import React from 'react';
+import {styles} from '../styles/Settings';
 
 const Settings = () => {
   return (
@@ -37,20 +38,3 @@ const Settings = () => {
 };
 
 export default Settings;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    backgroundColor: 'white',
-  },
-  imgStyle: {
-    height: 25,
-    width: 25,
-    resizeMode: 'cover',
-    tintColor: 'black',
-    marginHorizontal: 15,
-  },
-  imgView: {flexDirection: 'row', marginVertical: 30},
-});
